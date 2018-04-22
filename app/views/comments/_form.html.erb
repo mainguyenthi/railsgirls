@@ -1,6 +1,7 @@
 
 <%= form_for(@comment) do |form| %>
 <%= form.hidden_field :idea_id %>
+<%= form.hidden_field :user_id, value: current_user.id %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
